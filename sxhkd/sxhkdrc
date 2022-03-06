@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show drun -theme /home/agustin/.local/share/rofi/themes/nord.rasi
+	rofi -show drun 
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -171,7 +171,7 @@ super + b
 
 #power menu
 super + p
-        rofi -show power-menu -modi power-menu:~/scripts/rofi-power-menu -theme /home/agustin/.local/share/rofi/themes/nord.rasi 
+        rofi -show power-menu -modi power-menu:~/scripts/rofi-power-menu 
 ######## APPS
 #ranger
 super + r

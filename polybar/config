@@ -283,7 +283,7 @@ module-margin = 0
 
 font-0 = "Fantasque Sans Mono:pixelsize=10;3"
 font-1 = "Iosevka Nerd Font:pixelsize=10;3"
-font-2 = "Font Awesome 5 Free:pixelsize=10"
+font-2 = "MaterialIcons:pixelsize=10"
 font-3 = "HackGen:pixelsize=10;3"
 
 ; Modules are added to one of the available blocks
@@ -291,8 +291,8 @@ font-3 = "HackGen:pixelsize=10;3"
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
 modules-left = workspaces spotify 
-modules-center = date updates-dnf
-modules-right =  cpu sep memory sep xkeyboard sep pulseaudio sep battery 
+modules-center = date updates-apt
+modules-right =  cpu sep memory sep pulseaudio sep battery 
 
 ; The separator will be inserted between the output of each module
 separator =
@@ -852,40 +852,22 @@ label-empty-padding = 1
 ;format-foreground = #05FFA1 
 ;format-prefix-font = 2
 
-[module/xkeyboard]
-type = internal/xkeyboard
-
-; List of indicators to ignore
-blacklist-0 = num lock
-blacklist-1 = scroll lock
-
-format = <label-layout>
-format-prefix = 
-
-format-prefix-foreground = #8fbcbb
-format-spacing = 0
-
-label-layout-padding = 1
-label-layout-foreground = #8fbcbb
-
-
 [module/spotify]
 type = custom/script
-tail = true
-format = <label>
-label = %output%
-format-font = 3
-
-click-left = playerctl play-pause spotify
-;exec = python -u /path/to/spotify/script -s -t 35 -f '{artist}: {song}' -p ','
-exec-if = pgrep -x spotifyd
-exec = ~/scripts/polybar-spotify/init_polySpotify.sh
-format-foreground = #1db954
 interval = 1
+format-prefix = "🎜 "
+format-foreground = #1DB954
+format = <label>
+exec = python3 ./scripts/spotify_status.py -f '{artist}: {song}'
+;format-underline = #1db954
+;control players (optional)
+click-left = playerctl --player=spotify play-pause 
+click-right = playerctl --player=spotify next 
+click-middle = playerctl --player=spotify previous 
 
-[module/updates-dnf]
+[module/updates-apt]
 type = custom/script
-exec = ~/scripts/updates-dnf.sh
+exec = ./scripts/updates-apt.sh
 interval = 600
 format-prefix= 
 format-prefix-font= 2

@@ -2,8 +2,7 @@
 
 My configs for BSPWM, SXHKD, Polybar and more.
 
-Currently using Nord Theme.
+Currently using Nord Theme. (will change to other theme soon)
 
-For terminal colors, using pywal.
-
+OLD Preview:
 ![Preview](./Preview.png)

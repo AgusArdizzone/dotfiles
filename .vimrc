@@ -47,9 +47,9 @@ Plug 'ap/vim-css-color'
 call plug#end()
 
 syntax on 
-colorscheme nord
+colorscheme onedark
 hi Normal guibg=NONE ctermbg=NONE
-let g:airline_theme='nord'
+let g:airline_theme='onedark'
 
 let NERDTreeQuitOnOpen=1
 let mapleader=" "
