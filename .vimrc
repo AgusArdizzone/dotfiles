@@ -25,9 +25,9 @@ call plug#begin('~/.vim/plugged')
 
 " Temas
 Plug 'tomasr/molokai'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
 Plug 'joshdick/onedark.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 
 " IDE
 Plug 'easymotion/vim-easymotion'
@@ -47,9 +47,9 @@ Plug 'ap/vim-css-color'
 call plug#end()
 
 syntax on 
-colorscheme onedark
+colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
-let g:airline_theme='onedark'
+let g:airline_theme='gruvbox'
 
 let NERDTreeQuitOnOpen=1
 let mapleader=" "
