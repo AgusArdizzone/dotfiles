@@ -1,3 +1,15 @@
+[colors]
+background= #1d2021
+foreground= #d5c4a1
+black=   #1d2021
+red=     #fb4934
+green=   #b8bb26
+yellow=  #fabd2f
+blue=    #83a598
+magenta= #d3869b
+cyan=    #8ec07c
+white=   #d5c4a1
+
 [bar/hdmibar]
 ; Use either of the following command to list available outputs:
 ; If unspecified, the application will pick the first one it finds.
@@ -40,10 +52,10 @@ height = 32
 ;offset-y = 12
 
 ; Background ARGB color (e.g. #f00, #ff992a, #ddff1023)
-background = #50010101
+background = ${colors.background}
 
 ; Foreground ARGB color (e.g. #f00, #ff992a, #ddff1023)
-foreground = #000
+foreground = ${colors.foreground}
 
 ; Background gradient (vertical steps)
 ;   background-[0-9]+ = #aarrggbb
@@ -148,7 +160,7 @@ tray-transparent = false
 ; ARGB color (e.g. #f00, #ff992a, #ddff1023)
 ; By default the tray container will use the bar
 ; background color.
-tray-background = ${root.background}
+tray-background = ${colors.background}
 
 ; Tray offset defined as pixel value (e.g. 35) or percentage (e.g. 50%)
 tray-offset-x = 0
@@ -227,10 +239,11 @@ height = 32
 ;offset-y = 12
 
 ; Background ARGB color (e.g. #f00, #ff992a, #ddff1023)
-background = #80010101
+background = ${colors.background}
 
 ; Foreground ARGB color (e.g. #f00, #ff992a, #ddff1023)
-foreground = #000
+foreground = ${colors.foreground}
+
 
 ; Background gradient (vertical steps)
 ;   background-[0-9]+ = #aarrggbb
@@ -380,60 +393,6 @@ enable-ipc = false
 ; MODULES
 ;;;;;;;;;;;;;;;;
 
-[module/i3]
-type = internal/i3
-
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
-pin-workspaces = true
-
-; This will split the workspace name on ':'
-; Default: false
-strip-wsnumbers = true
-
-; Sort the workspaces by index instead of the default
-; sorting that groups the workspaces by output
-; Default: false
-index-sort = true
-
-; Create click handler used to focus workspace
-; Default: true
-enable-click = true
-
-; Create scroll handlers used to cycle workspaces
-; Default: true
-enable-scroll = false
-
-; Wrap around when reaching the first/last workspace
-; Default: true
-wrapping-scroll = false
-
-; Set the scroll cycle direction
-; Default: true
-reverse-scroll = false
-
-; Use fuzzy (partial) matching on labels when assigning
-; icons to workspaces
-; Example: code;♚ will apply the icon to all workspaces
-; containing 'code' in the label
-; Default: false
-fuzzy-match = true
-
-
-label-unfocused = %index%
-label-unfocused-padding = 2
-label-unfocused-foreground = #ffffff
-
-label-focused = %index%
-label-focused-foreground = #fff
-label-focused-background = #50505354
-label-focused-underline = #f92672
-label-focused-padding = 2
-
 [module/date]
 type = internal/date
 
@@ -454,7 +413,7 @@ time-alt = %H:%M:%S
 
 label = %date% %time%
 label-font = 0
-label-foreground = #D8DEE9
+label-foreground = ${colors.foreground}
 
 [module/wireless-network]
 type = internal/network
@@ -507,7 +466,7 @@ format-volume = <ramp-volume> <label-volume>
 ;   %percentage% (default)
 ;   %decibels% (unreleased)
 label-volume = %percentage%%
-label-volume-foreground = #ebcb8b
+label-volume-foreground = ${colors.yellow}
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -534,7 +493,7 @@ interval = 0.5
 
 label =  %percentage:2%%
 
-label-foreground = #b48ead
+label-foreground = ${colors.magenta}
 
 [module/memory]
 type = internal/memory
@@ -564,7 +523,7 @@ format = <label>
 
 label =  %gb_used%
 
-label-foreground = #bf616a
+label-foreground = ${colors.red}
 
 [module/temperature]
 type = internal/temperature
@@ -638,7 +597,7 @@ time-format = %H:%M
 ;   <ramp-capacity>
 ;   <animation-charging>
 format-charging = <animation-charging> <label-charging>
-format-charging-foreground = #a3be8c 
+format-charging-foreground = ${colors.green}
 
 ; Available tags:
 ;   <label-discharging> (default)
@@ -646,7 +605,7 @@ format-charging-foreground = #a3be8c
 ;   <ramp-capacity>
 ;   <animation-discharging>
 format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-foreground = #a3be8c
+format-discharging-foreground = ${colors.green}
 
 ; Available tags:
 ;   <label-full> (default)
@@ -654,7 +613,7 @@ format-discharging-foreground = #a3be8c
 ;   <ramp-capacity>
 format-full = <label-full>
 format-full-prefix = 
-format-full-background = #a3be8c
+format-full-background = ${colors.green}
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -716,50 +675,6 @@ margin = 0
 inherit = module/decor-glyph
 content = "|"
 
-
-[module/bspwm]
-type = internal/bspwm
-
-pin-workspaces = true
-inline-mode = true
-enable-click = true
-enable-scroll = true
-reverse-scroll = false
-
-format = <label-state>
-
-;ws-icon-0 = 1;%{F#F9DE8F}  
-;ws-icon-1 = 2;%{F#ff9b93}   
-;ws-icon-2 = 3;%{F#95e1d3}    
-;ws-icon-3 = 4;%{F#81A1C1}
-;ws-icon-4 = 5;%{F#A3BE8C} 
-
-label-separator = ""
-label-separator-background = #2b2f37
-
-label-focused =  %icon%  
-label-focused-foreground = ${colors.foreground}
-label-focused-underline =  #565c64
-label-focused-padding = 1
-label-focused-background = #2b2f37
-
-label-occupied =  %icon%  
-label-occupied-foreground = #646870  
-label-occupied-background = #2b2f37
-label-occupied-padding = 1
-
-label-empty = %icon%
-label-empty-foreground =   ${colors.foreground}
-label-empty-padding = 1
-label-empty-background = #2b2f37
-
-
-label-urgent = %icon%
-label-urgent-foreground = #88C0D0
-label-urgent-background = #2b2f37
-label-urgent-padding = 1
-
-
 [module/workspaces]
 type = internal/xworkspaces
 
@@ -797,7 +712,7 @@ icon-default = 
 ; Default: <label-state>
 format = <label-state>
 format-padding = 1
-format-foreground = #b967ff
+format-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %name%
@@ -810,7 +725,7 @@ label-monitor = %name%
 ;   %index%
 ; Default: %icon%  %name%
 label-active = 
-label-active-foreground = #88C0D0
+label-active-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %name%
@@ -818,7 +733,7 @@ label-active-foreground = #88C0D0
 ;   %index%
 ; Default: %icon%  %name%
 label-occupied = 
-label-occupied-foreground = #5E81AC
+label-occupied-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %name%
@@ -826,7 +741,7 @@ label-occupied-foreground = #5E81AC
 ;   %index%
 ; Default: %icon%  %name%
 label-urgent = 
-label-urgent-foreground = ${color.background}
+label-urgent-foreground = ${colors.foreground}
 
 ; Available tokens:
 ;   %name%
@@ -834,29 +749,18 @@ label-urgent-foreground = ${color.background}
 ;   %index%
 ; Default: %icon%  %name%
 label-empty = 
-label-empty-foreground = #5E81AC 
+label-empty-foreground = ${colors.foreground}
 
 label-active-padding = 1
 label-urgent-padding = 1
 label-occupied-padding = 1
 label-empty-padding = 1
 
-;[module/spotify]
-;type = custom/script
-;interval = 1
-;format-prefix = " "
-;format = <label>
-;label-maxlen = 30
-;exec = python3 ~/scripts/spotify_status.py -f '{artist}: {song}'
-
-;format-foreground = #05FFA1 
-;format-prefix-font = 2
-
 [module/spotify]
 type = custom/script
 interval = 1
 format-prefix = "🎜 "
-format-foreground = #1DB954
+format-foreground = ${colors.green}
 format = <label>
 exec = python3 ./scripts/spotify_status.py -f '{artist}: {song}'
 ;format-underline = #1db954
@@ -873,5 +777,5 @@ format-prefix= 
 format-prefix-font= 2
 format = <label>
 label = %output%
-format-foreground = #0066cc 
+format-foreground = ${colors.blue}
 format-padding = 1
