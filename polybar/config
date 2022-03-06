@@ -112,7 +112,7 @@ font-1 = "Iosevka Nerd Font:pixelsize=10;3"
 ;   modules-left = cpu ram
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
-modules-left = workspaces
+modules-left = bspwm
 modules-right = date
 
 ; The separator will be inserted between the output of each module
@@ -303,7 +303,7 @@ font-3 = "HackGen:pixelsize=10;3"
 ;   modules-left = cpu ram
 ;   modules-center = xwindow xbacklight
 ;   modules-right = ipc clock
-modules-left = workspaces spotify 
+modules-left = bspwm spotify 
 modules-center = date updates-apt
 modules-right =  cpu sep memory sep pulseaudio sep battery 
 
@@ -675,8 +675,8 @@ margin = 0
 inherit = module/decor-glyph
 content = "|"
 
-[module/workspaces]
-type = internal/xworkspaces
+[module/bspwm]
+type = internal/bspwm
 
 ; Only show workspaces defined on the same output as the bar
 ;
@@ -698,11 +698,7 @@ enable-scroll = true
 ; NOTE: The desktop name needs to match the name configured by the WM
 ; You can get a list of the defined desktops using:
 ; $ xprop -root _NET_DESKTOP_NAMES
-icon-0 = 1;
-icon-1 = 2;
-icon-2 = 3;
-icon-3 = 4;
-icon-4 = 5;
+
 icon-default = 
 
 
