@@ -613,7 +613,7 @@ format-discharging-foreground = ${colors.green}
 ;   <ramp-capacity>
 format-full = <label-full>
 format-full-prefix = 
-format-full-background = ${colors.green}
+format-full-foreground = ${colors.green}
 
 ; Available tokens:
 ;   %percentage% (default)
@@ -755,7 +755,7 @@ label-empty-padding = 1
 [module/spotify]
 type = custom/script
 interval = 1
-format-prefix = "🎜 "
+;format-prefix = "🎜 "
 format-foreground = ${colors.green}
 format = <label>
 exec = python3 ./scripts/spotify_status.py -f '{artist}: {song}'
