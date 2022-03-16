@@ -8,8 +8,8 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show drun 
-
+	rofi -show drun -font Iosevka\ 12 
+	
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -171,7 +171,7 @@ super + b
 
 #power menu
 super + p
-        rofi -show power-menu -modi power-menu:~/scripts/rofi-power-menu 
+        rofi -show power-menu -modi power-menu:~/scripts/rofi-power-menu -font Iosevka\ 12 
 ######## APPS
 #ranger
 super + r
