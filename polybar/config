@@ -767,11 +767,12 @@ click-middle = playerctl --player=spotify previous
 
 [module/updates-apt]
 type = custom/script
-exec = ./scripts/updates-apt.sh
+exec = bash /home/agustin/scripts/updates-apt.sh
 interval = 600
 format-prefix= 
 format-prefix-font= 2
 format = <label>
 label = %output%
+label-padding = 1
 format-foreground = ${colors.blue}
 format-padding = 1
