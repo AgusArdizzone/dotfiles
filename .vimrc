@@ -41,8 +41,8 @@ Plug 'vim-scripts/AutoComplPop'
 Plug 'justinmk/vim-syntax-extra'
 Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'chrisbra/unicode.vim'
-Plug 'vimsence/vimsence'
 Plug 'ap/vim-css-color'
+Plug 'vimsence/vimsence'
 
 call plug#end()
 
