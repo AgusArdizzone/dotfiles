@@ -37,12 +37,11 @@ Plug 'hugolgst/vimsence'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'frazrepo/vim-rainbow'
-Plug 'vim-scripts/AutoComplPop'
 Plug 'justinmk/vim-syntax-extra'
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 Plug 'chrisbra/unicode.vim'
 Plug 'ap/vim-css-color'
 Plug 'vimsence/vimsence'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
