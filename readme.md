@@ -2,7 +2,7 @@
 
 My configs for BSPWM, SXHKD, Polybar and more.
 
-Currently using Nord Theme. (will change to other theme soon)
+Currently using Gruvbox Dark Theme.
 
-OLD Preview:
+Preview:
 ![Preview](./Preview.png)
