@@ -17,7 +17,7 @@ set laststatus=2
 set complete+=kspell
 set completeopt=menuone,longest
 set shortmess+=c
-
+set tabstop=2 shiftwidth=2 expandtab
 """""""""""""""""""""'"""""""""""""""""""
 "Plugins
 """""""""""""""""""""'"""""""""""""""""""
@@ -42,6 +42,8 @@ Plug 'chrisbra/unicode.vim'
 Plug 'ap/vim-css-color'
 Plug 'vimsence/vimsence'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'tpope/vim-commentary'
+Plug 'rhysd/git-messenger.vim'
 
 call plug#end()
 
