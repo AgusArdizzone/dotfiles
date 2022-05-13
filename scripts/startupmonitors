@@ -1,7 +1,7 @@
 #! /bin/sh
 ## THIS GOES INTO BIN
-internal_monitor=eDP-1
-external_monitor=HDMI-1
+internal_monitor=eDP
+external_monitor=HDMI-A-0
 
 monitor_add() {
 	desktops=4 # How many desktops to move to the second monitor
@@ -36,10 +36,10 @@ monitor_remove() {
 }
 
 if [[ $(xrandr -q | grep "$external_monitor connected") ]]; then
-    xrandr --output eDP-1 --primary --mode 1366x768 --rotate normal --output HDMI-1 --mode 1366x768 --rotate normal --left-of eDP-1
+    xrandr --output eDP --primary --mode 1920x1080 --rotate normal --output HDMI-A-0 --mode 1366x768 --rotate normal --left-of eDP
     monitor_add
 else
-    xrandr --output eDP-1 --primary --mode 1366x768 --rotate normal
+    xrandr --output eDP --primary --mode 1920x1080 --rotate normal
     monitor_remove
 fi
 
