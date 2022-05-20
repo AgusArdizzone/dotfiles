@@ -5,7 +5,7 @@ set number
 set termguicolors
 set mouse=a
 set numberwidth=1
-set clipboard=unnamed
+set clipboard+=unnamedplus
 syntax enable
 set showcmd
 set ruler
@@ -24,9 +24,6 @@ set tabstop=2 shiftwidth=2 expandtab
 call plug#begin('~/.vim/plugged')
 
 " Temas
-Plug 'tomasr/molokai'
-Plug 'joshdick/onedark.vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 
 " IDE

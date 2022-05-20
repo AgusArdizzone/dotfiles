@@ -182,4 +182,7 @@ super + F1
 #spt
 super + F2
 	flatpak run com.spotify.Client
+
+super + z 
+  betterlockscreen --lock
 #### END
